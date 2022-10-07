@@ -17,7 +17,9 @@ export const Task = ({setTasks}) => {
   return (
       <form onSubmit={(event)=> onSubmit(event)}>
         {/* Formulario con el input */}
-        <div>Tareas</div>
+        <h1>Tareas. </h1>
+        <p>Escribe nueva tarea y enter para ingresar.</p>
+        
         <input
         type="text"
         placeholder="Add task"
