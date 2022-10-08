@@ -1,25 +1,27 @@
 import "./App.css";
+import Form from "react-bootstrap/Form";
 
 import React, { useState } from "react";
 import { Task } from "./components/Task";
+import { Title } from "./components/Title";
 
 export const App = () => {
-  const [tasks, setTasks] = useState([]);
+  const [tasks, setTasks] = useState(["tarea1", "tarea2"]);
   return (
     <>
-      <h1>PRUEBA TÉCNICA</h1>
-      <p>Pedro Quiñones Paternina</p>
+      <Title/>
       <hr />
 
       <Task setTasks={setTasks} />
-
-    
-        {tasks.map((task) => {
-          return <label> <input type="checkbox" id="cbox1" value="first_checkbox"/>{task}</label>
-        })}
-      
-
-      {/* <label><input type="checkbox" id="cbox1" value="first_checkbox"> Este es mi primer checkbox</label> */}
+      {/*     
+    {/* formulario de tareas, mapeado en el cual agrego un checkBox cuando se mapea el estado */}
+      <Form>
+        {tasks.map((task) => (
+          <div key={`default-${task}`} className="mb-3">
+            <Form.Check type="checkbox" label={task} />
+          </div>
+        ))}
+      </Form>
     </>
   );
 };
